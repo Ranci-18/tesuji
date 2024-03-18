@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tesuji Systems</title><style>* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .dark {
+            background-color: #000;
+            color: #008000;
+        }</style><script defer="defer" src="bundle.js"></script></head><body><div id="root"></div></body><script>document.addEventListener('DOMContentLoader', () => {
+        const toggleButton = document.getElementById('toggleButton');
+        toggleButton.addEventListener('change', () => {
+            if (!toggleButton.checked) {
+            document.body.classList.add('dark');
+            } else {
+            document.body.classList.remove('dark');
+            }
+
+            applyDarkMode();
+        });
+
+        function applyDarkMode() {
+            const darkModeStyles = `
+                body.dark {
+                    background-color: #000;
+                    color: #008000;
+                }
+            `;
+            const styleTag = document.createElement('style');
+            styleTag.textContent = darkModeStyles;
+            document.head.append(styleTag);
+        }
+    })</script></html>
