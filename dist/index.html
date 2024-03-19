@@ -3,30 +3,11 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .dark {
+        body[data-theme="dark"] {
             background-color: #000;
             color: #008000;
-        }</style><script defer="defer" src="bundle.js"></script></head><body><div id="root"></div></body><script>document.addEventListener('DOMContentLoader', () => {
-        const toggleButton = document.getElementById('toggleButton');
-        toggleButton.addEventListener('change', () => {
-            if (!toggleButton.checked) {
-            document.body.classList.add('dark');
-            } else {
-            document.body.classList.remove('dark');
-            }
-
-            applyDarkMode();
-        });
-
-        function applyDarkMode() {
-            const darkModeStyles = `
-                body.dark {
-                    background-color: #000;
-                    color: #008000;
-                }
-            `;
-            const styleTag = document.createElement('style');
-            styleTag.textContent = darkModeStyles;
-            document.head.append(styleTag);
         }
-    })</script></html>
+        body[data-theme="light"] {
+            background-color: #fff;
+            color: #000;
+        }</style><script defer="defer" src="bundle.js"></script></head><body data-theme="light"><div id="root"></div></body></html>
