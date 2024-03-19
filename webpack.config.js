@@ -36,8 +36,9 @@ module.exports = {
         }),
     ],
     devServer: {
-        static: './dist',
+        static: __dirname + './dist',
         hot: true,
         open: true,
+        compress: true,
     },
 };
